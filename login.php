@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Log In</title>
 </head>
+
 <body>
     <h1>Log In</h1>
 
@@ -32,7 +34,11 @@
             $row = $result->fetch_assoc();
 
             if (password_verify($password, $row['password_hash'])) {
-                echo "Login successful.";
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['username'] = $row['username'];
+                header("Location: index.php");
+                echo "Logged in successfully.";
+                exit();
                 // You can add session handling here to keep the user logged in.
             } else {
                 echo "Incorrect password.";
@@ -45,4 +51,5 @@
     $conn->close();
     ?>
 </body>
+
 </html>

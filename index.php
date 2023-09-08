@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>Welcome, <?php echo $_SESSION['user_username']; ?>!</h1>
+    <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
     <!-- Display user's profile information here -->
     <a href="logout.php">Log Out</a>
     <h1>Todo List</h1>

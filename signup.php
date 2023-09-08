@@ -34,7 +34,10 @@
         $sql = "INSERT INTO users (username, email, password_hash) VALUES ('$username', '$email', '$password')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Registration successful. <a href='login.php'>Log in</a>";
+            header("Location: index.php");
+            echo "Signed up successfully.";
+
+            exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
