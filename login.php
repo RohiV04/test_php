@@ -4,20 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Log In</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: #f0f0f0; /* Set your desired background color */
+        }
+
+        .container {
+            max-width: 400px;
+            margin-top: 100px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Log In</h1>
+    <div class="container">
+        <h1 class="text-center">Log In</h1>
 
-    <form action="login.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <button type="submit">Log In</button>
-    </form>
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </div>
+        </form>
+
+        <p class="text-center">New user? <a href="./signup.php">Signup</a></p>
+    </div>
 
     <?php
     session_start(); // Start the session
@@ -50,6 +75,9 @@
 
     $conn->close();
     ?>
+
+    <!-- Add Bootstrap JS if needed -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
